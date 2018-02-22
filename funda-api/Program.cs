@@ -74,6 +74,8 @@ namespace funda_api
                 hasMorePages = currentPage < totalPages;
 
                 results.AddRange(locatieFeed.Descendants(XName.Get("Object", ns)));
+                
+                // This would be the place to do some throttling if we're afraid of saturating the API
             }
 
             return results;
